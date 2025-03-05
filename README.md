@@ -13,7 +13,7 @@ En todo caso, se trata de un proyecto **SIMPLE** y **COMPLETO**. Es decir, que s
 
 Los requerimientos principales de diseño son los siguientes:
 - No hay limitación en cuanto a la plataforma ni género. 
-- Puede ser 2D ó 3D, 
+- Puede ser 2D ó 3D,   
 - Debe incluir una pantalla/panel UI/escena inicial en la que se mostrarán:
     - Título del juego y/o imagen de presentación.
     - Instrucciones de juego (si es pertinente) y de inicio de la partida. 
