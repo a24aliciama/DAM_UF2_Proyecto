@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 1e2dedf0209f94b3a970377b23a013a9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Indie Flower
+  fontNames:
+  - Indie Flower
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 146042
+  packageName: Create with Code | Prototype 5 - Quick Click
+  packageVersion: 1.0
+  assetPath: Assets/Course Library/Fonts/Indie_Flower/IndieFlower.ttf
+  uploadId: 326632

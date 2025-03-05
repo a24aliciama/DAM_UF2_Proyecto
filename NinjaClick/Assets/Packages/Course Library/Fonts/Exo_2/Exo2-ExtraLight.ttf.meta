@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: cbc1ad4e29ed647f78246ef482e0257d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Exo 2 Extra Light
+  fontNames:
+  - Exo 2 Extra Light
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9e358774b8511446d90a622491036bf9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 146042
+  packageName: Create with Code | Prototype 5 - Quick Click
+  packageVersion: 1.0
+  assetPath: Assets/Course Library/Fonts/Exo_2/Exo2-ExtraLight.ttf
+  uploadId: 326632

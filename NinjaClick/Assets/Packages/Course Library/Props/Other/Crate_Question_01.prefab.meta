@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d19c36dc5f97d444fa54380cf09bd828
+timeCreated: 1547159224
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 146042
+  packageName: Create with Code | Prototype 5 - Quick Click
+  packageVersion: 1.0
+  assetPath: Assets/Course Library/Props/Other/Crate_Question_01.prefab
+  uploadId: 326632
