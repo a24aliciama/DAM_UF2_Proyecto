@@ -9,10 +9,14 @@ public class Target : MonoBehaviour
     public float minForce = 12f , maxForce = 16f, minTorque = -10f, maxTorque = -10f;
     private float xRange = 4f, yRange = -5f;
 
+    private GameManager gm;
+
+    public int scoreValue;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         rb = GetComponent<Rigidbody>();
 
         rb.AddForce(RandomForce(), ForceMode.Impulse);
@@ -26,6 +30,13 @@ public class Target : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Destroy(gameObject);
+            if(gameObject.tag == "Good"){
+                gm.UpdateScore(scoreValue);
+            }else{
+                gm.UpdateScore(-scoreValue);
+                gm.UpdateVidas(1);
+            }
+            
         }
     }
 
@@ -33,6 +44,12 @@ public class Target : MonoBehaviour
         if(other.CompareTag("killZone"))
         {
             Destroy(gameObject);
+            if(gameObject.tag == "Good"){
+                gm.UpdateScore(-scoreValue);
+                gm.UpdateVidas(1);
+            }else{
+                gm.UpdateScore(scoreValue);
+            }
         }
     }
 

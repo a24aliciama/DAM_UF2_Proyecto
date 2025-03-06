@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3925780515003301686}
   m_Layer: 6
   m_Name: Bad1
-  m_TagString: Untagged
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   maxForce: 16
   minTorque: -10
   maxTorque: -10
+  scoreValue: 20
 --- !u!96 &-3925780515003301686
 TrailRenderer:
   serializedVersion: 3
