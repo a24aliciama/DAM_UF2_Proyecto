@@ -155,6 +155,7 @@ MonoBehaviour:
   minTorque: -10
   maxTorque: -10
   scoreValue: 10
+  boom: {fileID: 3199346384015752365, guid: 307229a5540374aae98859caad2128a3, type: 3}
 --- !u!96 &-9100419310988536645
 TrailRenderer:
   serializedVersion: 3
