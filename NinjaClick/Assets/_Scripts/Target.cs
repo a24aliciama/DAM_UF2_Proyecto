@@ -40,6 +40,7 @@ public class Target : MonoBehaviour
                 }else{
                     gm.UpdateScore(-scoreValue);
                     gm.UpdateVidas(1);
+                    gm.destruccion();
                 }
                 
             }

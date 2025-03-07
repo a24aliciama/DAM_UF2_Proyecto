@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI pause;
 
     public Button pauseButton;
-
+    public Button menu;
+    public Button reiniciar;
 
     private int _score;
     private int score{
@@ -53,12 +54,18 @@ public class GameManager : MonoBehaviour
 
     private int extra = 0;
 
+
+    public Transform cameraTransform; // Para manipular la cámara
+    private float shakeIntensity = 0.1f, shakeDuration = 0.5f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
         over.gameObject.SetActive(false);
         pause.gameObject.SetActive(false);
+        menu.gameObject.SetActive(false);
+        reiniciar.gameObject.SetActive(false);
 
         gameState = GameState.inGame;
         StartCoroutine(SpawnTarget());
@@ -70,6 +77,9 @@ public class GameManager : MonoBehaviour
         UpdateVidas(0);
 
         pauseButton.onClick.AddListener(Pause);
+        menu.onClick.AddListener(Pause);
+        reiniciar.onClick.AddListener(Pause);
+        
     }
 
     void Update()
@@ -94,6 +104,33 @@ public class GameManager : MonoBehaviour
             Instantiate(targetPrefabs[index]);
         }
     }
+
+    IEnumerator ShakeCamera() {
+
+        if(gameState == GameState.inGame){
+            Vector3 originalCameraPosition = cameraTransform.position;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < shakeDuration) {
+                float x = Random.Range(-shakeIntensity, shakeIntensity);
+                float y = Random.Range(-shakeIntensity, shakeIntensity);
+
+                cameraTransform.position = new Vector3(originalCameraPosition.x + x, originalCameraPosition.y + y, originalCameraPosition.z);
+                elapsedTime += Time.deltaTime;
+
+                yield return null;
+            }
+
+            cameraTransform.position = originalCameraPosition; // Restablecer la posición original
+        }
+        
+    }
+
+    public void destruccion() {
+        shakeDuration = 2f;
+        StartCoroutine(ShakeCamera());
+        shakeDuration = 0.5f;
+    }   
 
     public void UpdateScore(int scoreToAdd){
 
@@ -121,6 +158,11 @@ public class GameManager : MonoBehaviour
             vidas -= perdida;
             vidasText.text = "" + vidas;
 
+            // Mover la cámara cuando se pierde una vida
+            if (perdida > 0) {
+                StartCoroutine(ShakeCamera());
+            }
+
             if(vidas <= 0){
                 GameOver();
             }
@@ -129,6 +171,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(){
         over.gameObject.SetActive(true);
+        menu.gameObject.SetActive(true);
+        reiniciar.gameObject.SetActive(true);
         gameState = GameState.gameOver;
     }
 
