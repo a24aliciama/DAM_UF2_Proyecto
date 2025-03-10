@@ -42,6 +42,15 @@ public class Target : MonoBehaviour
                     gm.UpdateVidas(1);
                     gm.destruccion();
                 }
+
+                 if (gameObject.CompareTag("Good"))
+                {
+                    Effects.instance.PlaySoundEffect("Good");
+                }
+                else if (gameObject.CompareTag("Bad"))
+                {
+                    Effects.instance.PlaySoundEffect("Bad");
+                }
                 
             }
         }

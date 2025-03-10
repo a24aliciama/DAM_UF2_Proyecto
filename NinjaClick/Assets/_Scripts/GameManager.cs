@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -53,7 +55,8 @@ public class GameManager : MonoBehaviour
     }
 
     private int extra = 0;
-
+    
+    private string filePath;
 
     public Transform cameraTransform; // Para manipular la cámara
     private float shakeIntensity = 0.1f, shakeDuration = 0.5f;
@@ -61,7 +64,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        filePath = Application.persistentDataPath + "/scores.txt";
         over.gameObject.SetActive(false);
         pause.gameObject.SetActive(false);
         menu.gameObject.SetActive(false);
@@ -75,10 +78,6 @@ public class GameManager : MonoBehaviour
         vidas = 3;
         UpdateScore(0);
         UpdateVidas(0);
-
-        pauseButton.onClick.AddListener(Pause);
-        menu.onClick.AddListener(Pause);
-        reiniciar.onClick.AddListener(Pause);
         
     }
 
@@ -170,10 +169,17 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver(){
+        SaveScore(score);
         over.gameObject.SetActive(true);
         menu.gameObject.SetActive(true);
         reiniciar.gameObject.SetActive(true);
         gameState = GameState.gameOver;
+    }
+
+     void SaveScore(int newScore)
+    {
+        // Agrega la puntuación al archivo
+        File.AppendAllText(filePath, newScore + "\n");
     }
 
     public void Pause(){
@@ -184,6 +190,8 @@ public class GameManager : MonoBehaviour
             // Reanudar el juego
             Time.timeScale = 1f;
             pause.gameObject.SetActive(false);
+            menu.gameObject.SetActive(false);
+            reiniciar.gameObject.SetActive(false);
             gameState = GameState.inGame;
         }
         else if(gameState == GameState.inGame)
@@ -191,7 +199,17 @@ public class GameManager : MonoBehaviour
             // Pausar el juego
             Time.timeScale = 0f;
             pause.gameObject.SetActive(true);
+            menu.gameObject.SetActive(true);
+            reiniciar.gameObject.SetActive(true);
             gameState = GameState.pause;
         }
+    }
+
+    public void Restart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void Menu(){
+        gameState = GameState.inGame;
+        SceneManager.LoadScene("Menu");
     }
 }

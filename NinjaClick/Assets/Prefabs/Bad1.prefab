@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6005108795301656989}
   - component: {fileID: 1961514981754303096}
   - component: {fileID: -3925780515003301686}
+  - component: {fileID: -1668930523856015440}
   m_Layer: 6
   m_Name: Bad1
   m_TagString: Bad
@@ -272,3 +273,15 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &-1668930523856015440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438430467103473873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d62df17c1401d45b76b7782d39f604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

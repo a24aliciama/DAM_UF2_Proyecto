@@ -4,5 +4,21 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 9c9be369fa02dc44a906d449018e3af2
+  - enabled: 1
+    path: Assets/Scenes/Normal Game.unity
+    guid: 84729eeda748340d0955715b6a50b370
+  - enabled: 1
+    path: Assets/Scenes/Zen Game.unity
+    guid: 573381926376b034696ceb44276cd333
+  - enabled: 1
+    path: Assets/Scenes/Time Game.unity
+    guid: 410ba1ee7c2de8b4cb0883b272b53567
+  - enabled: 1
+    path: Assets/Scenes/Score Normal.unity
+    guid: 9ca7ddc89939ab6448c5e25ef4a281e4
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
